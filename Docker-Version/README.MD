@@ -16,6 +16,7 @@ This is a self contained docker container with the APIC to DAG script. It has a 
 How to install:
 
   docker pull djspears/panw:aci-v6
+  
   docker run -p 2000:80 -d djspears/panw:aci-v6 /bin/bash -c "/bin/start.sh; tail -f /dev/null"
 
   To access:
