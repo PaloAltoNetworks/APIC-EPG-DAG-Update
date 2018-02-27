@@ -3,7 +3,9 @@ APIC-EPG-DAG-Update -DOCKER VERSION-
 This example docker containter with code that may be used to capture select ACI EPG learned Endpoints and populate PANW Dynamic Address Groups. The script assumes the following information is defined:
 
 Tenant that the EPG's reside in.
+
 EPG Name.
+
 Firewall VSYS that the DAG should be placed in.
 
 Prerequisites:
@@ -22,7 +24,8 @@ How to install:
 
   To access:
   
-  Browse to http://127.0.0.1:2000
+  Browse to http://127.0.0.1:2000:
+  
   To access the container:
   
     find container id by executing:
