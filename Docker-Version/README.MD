@@ -5,22 +5,21 @@ Tenant that the EPG's reside in.
 EPG Name.
 Firewall VSYS that the DAG should be placed in.
 
-Prerequisites
+Prerequisites:
+
 Docker 
 
 How it works:
+
 This is a self contained docker container with the APIC to DAG script. It has a web front-end and has ACI Toolkit and Palo Networks API toolkits preloaded. The script checks the presence of the appropriate DAGs and creates or removes them as needed. The PANW DAGs are in the format "tenant--EPG" in the defined PANW vsys. An API call is made to the APIC that extracts the Learned Enpoint information and checks to see if the firewall has correct entries. If additions or deletions are needed the script creates an API call to make the appropriate changes. A firewall commit is not required unless Address Objects need to be added or removed.
 
-How to install
-  Copy the aci-v6.tar.gz to the local docker server
-  docker load < aci-v6.tar.gz
-  docker run -p 2000:80 -d djspears/priv-panw:aci-v6 /bin/bash -c "/bin/start.sh; tail -f /dev/null"
-  
-  Alternatively:
+How to install:
+
   docker pull djspears/panw:aci-v6
   docker run -p 2000:80 -d djspears/panw:aci-v6 /bin/bash -c "/bin/start.sh; tail -f /dev/null"
 
   To access:
+  
   Browse to http://127.0.0.1:2000
   To access the container:
     find container id by executing:
